@@ -1,0 +1,81 @@
+sudo useradd -d /home/yogesh yogesh
+sudo passwd yogesh
+#*type password*
+
+sudo apt-get update
+sudo apt-get install git
+sudo apt-get install default-jre
+sudo apt-get install default-jdk
+sudo apt-get update
+sudo apt-get install nginx
+
+
+#Nginx config
+cd /etc/nginx/sites-available
+sudo touch my-site
+sudo nano my-site
+ server {
+    listen       80;
+    server_name api.yogesh-jadhav.com;
+
+    location / {
+       proxy_pass http://127.0.0.1:9000;
+    }
+ }
+
+
+
+sudo touch restful-api
+sudo nano restful-api
+
+ server {
+    listen       80;
+    server_name api.vertexcover.co.in;
+
+    location / {
+       proxy_pass http://127.0.0.1:9000;
+    }
+ }
+
+
+
+sudo touch bio-site
+sudo nano bio-site
+
+ server {
+    listen       80;
+    server_name bio.yogesh-jadhav.com;
+
+        root /var/www/html/php;
+        index index.html index.htm;
+
+    location /hello {
+#       try_files $uri $uri/ /index.html;
+    }
+ }
+
+
+cd ..
+sudo nano nginx.config
+
+#comment this line
+#include /etc/nginx/sites-enabled/*;
+
+#Add these lines
+include /etc/nginx/sites-available/bio-site; 
+include /etc/nginx/sites-available/my-site; 
+include /etc/nginx/sites-available/restful-api; 
+
+sudo service nginx restart
+
+
+sudo mkdir -p /home/yogesh/apps/play-apps
+sudo chown yogesh:yogesh /home/yogesh -R
+sudo chmod -R 777 /home/yogesh
+cd /home/yogesh/apps/play-apps
+
+su yogesh
+#*type password*
+git clone https://yogse7en@bitbucket.org/yogse7en/restful-api-app.git
+cd restful-api-app/
+sh prod_script.sh

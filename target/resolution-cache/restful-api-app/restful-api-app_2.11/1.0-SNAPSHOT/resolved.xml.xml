@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+	<info organisation="restful-api-app"
+		module="restful-api-app_2.11"
+		revision="1.0-SNAPSHOT"
+		status="integration"
+		publication="20180812003025"
+	>
+		<description>
+		restful-api-app
+		</description>
+	</info>
+	<configurations>
+		<conf name="compile" visibility="public" description=""/>
+		<conf name="runtime" visibility="public" description="" extends="compile"/>
+		<conf name="test" visibility="public" description="" extends="runtime"/>
+		<conf name="provided" visibility="public" description=""/>
+		<conf name="optional" visibility="public" description=""/>
+		<conf name="compile-internal" visibility="private" description="" extends="compile,optional,provided"/>
+		<conf name="runtime-internal" visibility="private" description="" extends="runtime,optional"/>
+		<conf name="test-internal" visibility="private" description="" extends="test,optional,provided"/>
+		<conf name="plugin" visibility="private" description=""/>
+		<conf name="sources" visibility="public" description=""/>
+		<conf name="docs" visibility="private" description=""/>
+		<conf name="pom" visibility="public" description=""/>
+		<conf name="scala-tool" visibility="private" description=""/>
+	</configurations>
+	<publications>
+		<artifact name="restful-api-app_2.11" type="pom" ext="pom" conf="pom"/>
+		<artifact name="restful-api-app_2.11" type="jar" ext="jar" conf="compile"/>
+		<artifact name="restful-api-app_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		<artifact name="restful-api-app_2.11" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+	</publications>
+	<dependencies>
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.7" conf="scala-tool->default,optional(default)"/>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.11.7" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-enhancer" rev="1.1.0" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="twirl-api_2.11" rev="1.1.1" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-ebean_2.11" rev="2.0.0" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-server_2.11" rev="2.5.4" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-test_2.11" rev="2.5.4" conf="test->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-omnidoc_2.11" rev="2.5.4" conf="docs->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-java_2.11" rev="2.5.4" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-netty-server_2.11" rev="2.5.4" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-logback_2.11" rev="2.5.4" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-java-jdbc_2.11" rev="2.5.4" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.5.4" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-java-ws_2.11" rev="2.5.4" conf="compile->default(compile)"/>
+		<dependency org="mysql" name="mysql-connector-java" rev="5.1.37" conf="compile->default(compile)"/>
+		<dependency org="javax.persistence" name="persistence-api" rev="1.0" conf="compile->default(compile)"/>
+		<dependency org="org.apache.ftpserver" name="ftpserver-core" rev="1.0.6" conf="compile->default(compile)"/>
+		<dependency org="org.apache.commons" name="commons-lang3" rev="3.4" conf="compile->default(compile)"/>
+		<dependency org="org.codehaus.jackson" name="jackson-mapper-asl" rev="1.9.13" conf="compile->default(compile)"/>
+		<dependency org="com.amazonaws" name="aws-java-sdk-ses" rev="1.11.384" conf="compile->default(compile)"/>
+		<dependency org="javax.mail" name="mail" rev="[1.0.0,)" conf="compile->default(compile)"/>
+		<dependency org="com.opencsv" name="opencsv" rev="3.3" conf="compile->default(compile)"/>
+		<dependency org="org.igniterealtime.smack" name="smack-tcp" rev="4.1.9" conf="compile->default(compile)"/>
+		<dependency org="org.igniterealtime.smack" name="smack-java7" rev="4.1.9" conf="compile->default(compile)"/>
+		<dependency org="com.google.code.gson" name="gson" rev="2.8.5" conf="compile->default(compile)"/>
+		<dependency org="com.google.api-client" name="google-api-client" rev="1.24.1" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="filters-helpers_2.11" rev="2.5.4" conf="compile->default(compile)"/>
+	</dependencies>
+</ivy-module>

@@ -1,0 +1,9 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/Users/yogesh/apps/restful-api-app/conf/logback.xml,/Users/yogesh/apps/restful-api-app/target/scala-2.11/classes/logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(/Users/yogesh/apps/restful-api-app/conf/prod-logger.xml,/Users/yogesh/apps/restful-api-app/target/scala-2.11/classes/prod-logger.xml)[0m
+[0m[[0mdebug[0m] [0m	(/Users/yogesh/apps/restful-api-app/conf/application.conf,/Users/yogesh/apps/restful-api-app/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/Users/yogesh/apps/restful-api-app/conf/prod.conf,/Users/yogesh/apps/restful-api-app/target/scala-2.11/classes/prod.conf)[0m
+[0m[[0mdebug[0m] [0m	(/Users/yogesh/apps/restful-api-app/conf/evolutions,/Users/yogesh/apps/restful-api-app/target/scala-2.11/classes/evolutions)[0m
+[0m[[0mdebug[0m] [0m	(/Users/yogesh/apps/restful-api-app/conf/routes,/Users/yogesh/apps/restful-api-app/target/scala-2.11/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/Users/yogesh/apps/restful-api-app/conf/evolutions/default,/Users/yogesh/apps/restful-api-app/target/scala-2.11/classes/evolutions/default)[0m
+[0m[[0mdebug[0m] [0m	(/Users/yogesh/apps/restful-api-app/conf/evolutions/default/1.sql,/Users/yogesh/apps/restful-api-app/target/scala-2.11/classes/evolutions/default/1.sql)[0m

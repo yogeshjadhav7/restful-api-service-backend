@@ -1,0 +1,63 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+
+# INTELLECTO API
+# OTP VALIDATION ROUTES
+POST		/intellecto/otp/generate							web.controllers.intellecto.UsersController.generateOTP()
+POST		/intellecto/otp/validate							web.controllers.intellecto.UsersController.validateOTP()
+
+# USER ROUTES
+POST		/intellecto/fetch/userid							web.controllers.intellecto.UsersController.getUserId()
+
+
+# BEHAVIOUR ROUTES
+#POST	/intellecto/fetch/behaviour						web.controllers.intellecto.UsersBehaviourController.getUserBehaviour()
+POST		/intellecto/update/behaviour						web.controllers.intellecto.UsersBehaviourController.updateUserBehaviour()
+
+
+# FRIENDS ROUTES
+POST		/intellecto/fetch/friends						web.controllers.intellecto.FriendsController.getFriendsOf()
+POST		/intellecto/update/friends						web.controllers.intellecto.FriendsController.updateFriendship()
+POST		/intellecto/add/friend							web.controllers.intellecto.FriendsController.addFriend()
+
+
+# USER GAME INFO ROUTES
+POST		/intellecto/update/user_game_info				web.controllers.intellecto.UserGameInfoController.updateUserGameInfo()
+
+
+# CHECK VERSION ROUTES
+POST		/intellecto/check/app_version					web.controllers.intellecto.VersioningController.checkAppVersion()
+
+
+# ROBOT ROUTES
+POST		/intellecto/robot/predictions					web.controllers.intellecto.RobotController.fetchRobotPredictions()
+POST		/intellecto/robot/train							web.controllers.intellecto.RobotController.trainRobot()
+POST		/intellecto/robot/notify/train/completion		web.controllers.intellecto.RobotController.notifyTrainingCompletion()
+POST		/intellecto/fetch/robot/info						web.controllers.intellecto.RobotController.fetchRobotInfo()
+
+# FE-SITE API
+GET		/led7/predict									web.controllers.led7.PredictorController.predict()
+GET		/led7/db/initializer								web.controllers.led7.PredictorController.databaseInitializer()
+
+
+# NOTIFICATIONS API
+POST	   /intellecto/send/notification/token				web.controllers.intellecto.NotificationController.saveFirebaseNotificationToken()
+#GET	   /intellecto/test/notification/v0					web.controllers.intellecto.NotificationController.testNotificationV0()
+
+
+
+#GET	/intellecto/test										web.controllers.led7.PredictorController.test()
+
+
+
+
+# DEEP LINKING ROUTE
+#GET /app/intellecto/test									web.controllers.intellecto.DeepLinkManagementController.test()
+
+
+
+
+
+
+
+
