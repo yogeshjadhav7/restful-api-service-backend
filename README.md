@@ -7,9 +7,11 @@ This Java project uses Web Play FrameWork (https://www.playframework.com/) and i
 ### Prerequisites
 ----
 - Java 1.8
-- MYSQL (recommended ver: 5.7.17) instance running locally or remotely. Use **db_setup.sql** for setting up the database schema. Place your connection endpoint url in **conf/application.conf** for **db.default.url** and connection credentials for **db.default.username** and **db.default.password**.
-- (Optional) Firebase Messaging Credentials. I use them to trigger notifications about various events on the client devices of my android app Intellecto (https://play.google.com/store/apps/details?id=com.jadhav.yogesh.intellecto). Add your firebase authorization key for **firebase.notification.v0.authorization.key** in **conf/application.conf**.
-- (Optional) AWS SimpleEmailService credentails. I use AWS SES to send OTP on the client devices for user to sign into Intellecto app. Add your AWS SES access and secret keys for **aws.ses.access.key** and **aws.ses.secret.key** in **conf/application.conf**.
+- MYSQL (recommended ver: 5.7.17) instance running locally or remotely. Use **db_setup.sql** for setting up the database schema. Place your connection endpoint url in **conf/application.conf** against **db.default.url** and connection credentials against **db.default.username** and **db.default.password**.
+- (Optional) Firebase Messaging Credentials. I use them to trigger notifications about various events on the client devices of my android app Intellecto (https://play.google.com/store/apps/details?id=com.jadhav.yogesh.intellecto). Add your firebase authorization key against **firebase.notification.v0.authorization.key** in **conf/application.conf**.
+- (Optional) AWS SimpleEmailService credentails. I use AWS SES to send OTP on the client devices for user to sign into Intellecto app. Add your AWS SES access and secret keys against **aws.ses.access.key** and **aws.ses.secret.key** in **conf/application.conf**. You will have to move your AWS SES out of sandbox (https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html), if not done already, to register your email address or domain name to send emails to your clients. Add your registered email address against **aws.ses.from.email** in **conf/application.conf**.
+- (Optional) I use **intellecto.api.key** located in **conf/application.conf** to authorize incoming API requests to the service. This ensures that the requests have organically come from android devices only.
+- All the above (Optional) point are redundant if you are not the owner of the Intellecto app, that is, me! :P. Just for the sake of completion and clarity to the reader of this README, I have mentioned them.
 
 ### Installation
 ----
@@ -30,7 +32,7 @@ cd restful-api-service-backend
 ./activator clean run
 ```
 
-> Test the installation.
+>> Test the installation.
 ``` sh
 curl http://localhost:9000
 ```

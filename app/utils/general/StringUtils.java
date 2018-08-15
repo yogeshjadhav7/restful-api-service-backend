@@ -12,4 +12,22 @@ public class StringUtils {
 		}
 		return otpString;
 	} 
+	
+	private static final String ALPHANUMERIC = "qwertyuiopasdfghjklzxcvbnm0123456789QWERTYUIOPASDFGHJKLZXCVBNM";
+	public static String generateRandomString(final int size) {
+		String  string = "";
+		for(int i = 0; i < size; i++) {
+			int index = (int)(Math.random() * (ALPHANUMERIC.length() - 1));
+			string += ALPHANUMERIC.charAt(index);
+		}
+		return string;
+	} 
+	
+    public static String getAuthKey(final long userId, final String userName, final String apiKey) {
+        String authKey = null;
+        authKey = MD5.getHashValue(Long.toString(userId) + "#" + userName);
+        authKey = MD5.getHashValue(authKey + "@" + apiKey);
+        authKey = MD5.getHashValue(userName + "$" + authKey + Long.toString(userId));
+        return authKey;
+    }
 }

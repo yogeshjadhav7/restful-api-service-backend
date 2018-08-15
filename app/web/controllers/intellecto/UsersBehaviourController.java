@@ -10,10 +10,14 @@ import web.db.dto.intellecto.Behaviour;
 import web.response.IntellectoResponse;
 
 
-public class UsersBehaviourController extends Controller {
+public class UsersBehaviourController extends IntellectoController {
 	
 	public Result getUserBehaviour() {
-		Map<String, String> formData = Form.form().bindFromRequest().data();
+		Map<String, String> formData = Form.form().bindFromRequest().data();	
+		
+		final IntellectoResponse authorizationResponse = authorizeRequest(formData);
+		if(authorizationResponse != null) return ok(JsonObjectMapper.toJsonString(authorizationResponse, true));
+		
 		final long userId = Long.parseLong(formData.get("userId"));
 		IntellectoResponse response = BehaviourDao.getUserBehaviour(userId);
 		return ok(JsonObjectMapper.toJsonString(response, true));
@@ -21,6 +25,10 @@ public class UsersBehaviourController extends Controller {
 
 	public Result updateUserBehaviour() {
 		Map<String, String> formData = Form.form().bindFromRequest().data();
+
+		final IntellectoResponse authorizationResponse = authorizeRequest(formData);
+		if(authorizationResponse != null) return ok(JsonObjectMapper.toJsonString(authorizationResponse, true));
+			
 		final long userId = Long.parseLong(formData.get("userId"));
 		final Behaviour behaviours = (Behaviour) JsonObjectMapper.toObject(formData.get("behaviour"), Behaviour.class);
 		IntellectoResponse response = BehaviourDao.updateUserBehaviour(userId, behaviours);

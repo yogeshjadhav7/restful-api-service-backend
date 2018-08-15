@@ -16,16 +16,8 @@ import web.db.models.intellecto.Intellecto_Users;
 import web.response.IntellectoResponse;
 
 
-public class UsersController extends Controller {
+public class UsersController extends IntellectoController {
 	
-	public Result getUserId() {
-		Map<String, String> formData = Form.form().bindFromRequest().data();
-		final String userName = formData.get("userName");
-		IntellectoResponse response = UsersDao.getIdOfUser(userName);
-		return ok(JsonObjectMapper.toJsonString(response, true));
-	}
-	
-
 	public Result generateOTP() {
 		Map<String, String> formData = Form.form().bindFromRequest().data();
 		final String userName = formData.get("userName");

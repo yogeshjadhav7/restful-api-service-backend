@@ -17,7 +17,7 @@ import web.db.models.intellecto.Intellecto_Users;
 import web.response.IntellectoResponse;
 
 
-public class VersioningController extends Controller {
+public class VersioningController extends IntellectoController {
 	
 	public Result checkAppVersion() {
 		Map<String, String> formData = Form.form().bindFromRequest().data();
