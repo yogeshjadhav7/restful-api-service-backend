@@ -30,7 +30,7 @@ cd restful-api-service-backend
 ./activator clean run
 ```
 
->> Test the installation.
+> Test the installation.
 ``` sh
 curl http://localhost:9000
 ```
