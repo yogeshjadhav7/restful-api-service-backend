@@ -18,4 +18,5 @@ public class AppConstants {
 	final public static String LED7_TYPE_SGD = "SGD";
 	final public static String LED7_TYPE_KNN = "KNN";
 	final public static String LED7_TYPE_SVM = "SVM";
+	final public static String LED7_TYPE_AFFINITY = "AFFINITY";
 }

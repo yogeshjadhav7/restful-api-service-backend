@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.avaje.ebean.Ebean;
 
+import utils.general.JsonObjectMapper;
 import web.constants.app.AppConstants;
 import web.constants.intellecto.FriendsDaoConstants;
 import web.db.models.intellecto.Intellecto_Friends;
@@ -20,6 +21,15 @@ public class Led7Dao {
 			Ebean.deleteAll(Led7_Data.find.all());
 			System.out.println("Deleted all records...");
 			System.out.println("Saving all records...");
+			
+			/*
+			for(int i = 0; i < dataList.size(); i++) {
+				System.out.println("Saving record #" + Integer.toString(i + 1));
+				System.out.println(JsonObjectMapper.toJsonString(dataList.get(i), true));
+				Ebean.save(dataList.get(i));
+			}
+			*/
+			
 			Ebean.saveAll(dataList);
 			System.out.println("Saved all records...");
 			Ebean.commitTransaction();

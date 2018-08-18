@@ -187,7 +187,7 @@ CREATE TABLE `led7_data` (
   `probability_8` decimal(5,2) NOT NULL DEFAULT '0.00',
   `probability_9` decimal(5,2) NOT NULL DEFAULT '0.00',
   `request_count` int(11) NOT NULL DEFAULT '0',
-  `type` varchar(7) NOT NULL DEFAULT 'MLP',
+  `type` varchar(10) NOT NULL DEFAULT 'AFFINITY',
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3841 DEFAULT CHARSET=latin1;
