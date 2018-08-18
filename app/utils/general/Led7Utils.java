@@ -47,13 +47,8 @@ public class Led7Utils {
             		continue;
             	}
             	
-            	String state = null;
+            	String state = "";
             	for(String s : line) {
-            		if(state == null) {
-            			state = "";
-            			continue;
-            		}
-            		
             		state += s;
             	}
             	
